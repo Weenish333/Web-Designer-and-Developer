@@ -1,0 +1,1293 @@
+@import url('http://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --brown: #fdf9f9;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: .2s linear;
+}
+body{
+    background: #000;
+    color: #fff;
+}
+
+.btn {
+    margin: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    background: #000;
+    color: #f9af10;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background: #6c3b02;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 7rem 9%;
+}
+.heading{
+    background: url("images/heading.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+   text-align: center;
+    padding-top: 12rem;
+    padding-bottom: 8rem;   
+}
+
+.heading h1{
+    color: #eb8d22;
+    font-size: 4rem;   
+}
+.title {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    border-bottom: 0.1rem solid #f9af10; /* Changed border to yellow */
+    color: #fff;
+    background-color: #000; /* Background set to black */
+}
+
+.title span{
+    color:#f9af10;
+    padding-left: .7rem;
+
+}
+.title a{
+    margin-left: auto;
+    color: #eb8d22;
+    font-size: 1.5rem;   
+}
+.title a:hover{
+    color: #f9af10;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--brown);
+    display: flex;
+    align-items: center; /* Ensures the text and image are aligned vertically */
+    justify-content: space-between;
+    padding: 1.5rem 7%; /* Reduced padding for a more compact look */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+    font-size: 2rem; /* Reduced logo font size */
+    font-weight: bolder;
+    color: #faad06;
+    display: flex; /* Flexbox to align image and text horizontally */
+    align-items: center; /* Ensures image and text align vertically */
+}
+.header .logo i {
+    font-size: 2.8rem; /* Adjust the size of the basket icon */
+    color: #1a1616;
+    margin-right: .4rem; /* Add space between the basket and the text if needed */
+    vertical-align: middle; /* Aligns the basket vertically with the text */
+}
+
+.header .logo img {
+    width: 8.4rem; /* Adjust the image size slightly */
+    height: auto; /* Keeps aspect ratio */
+    margin-right: .5rem; /* Space between image and text */
+}
+
+
+.header .navbar a {
+    font-size: 1.9rem; /* Reduced font size for the navbar links */
+    color: #6c3b02;
+    margin: 0 0.8rem; /* Reduced margin for better spacing */
+}
+
+
+.header .navbar a:hover {
+    color: #f9af10;
+}
+.header .icons div {
+    position: relative; /* Set relative positioning to the icon container */
+    font-size: 1.9rem;
+    margin-left: 1.7rem;
+    cursor: pointer;
+    color: #6c3b02; /* Base color for all icons */
+    display: inline-block;
+}
+
+.header .icons .fa-shopping-cart {
+    color: #6c3b02; /* Specific color for the shopping cart icon */
+}
+
+.header .icons .fa-shopping-cart:hover{
+    color: #f9af10;
+}
+
+.header .icons div:hover {
+    color: #f9af10; /* Hover color for all icons */
+}
+.header #logout-form h3 {
+    font-size: 1.4rem; /* Smaller font size */
+    color: #f8b72b; /* Color for readability */
+    font-weight: bold; /* Emphasize the text */
+    margin-right: 0.1rem; /* Adjust margin */
+    display: inline-block; /* Inline display */
+}
+
+.header #logout-form h3:hover{
+    color: #6c3b02;
+}
+.header .logout-btn {
+    position: relative;
+    font-size: 1.6rem; /* Smaller font size */
+    padding: 0.1rem 0.1rem; /* Adjust padding */
+    cursor: pointer;
+    color: #6c3b02;
+    background-color: transparent;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+.header .logout-btn:hover{
+    color: #f9af10;
+}
+
+/* Styling for the badge inside each icon */
+.header .icons div span {
+    position: absolute; /* Set absolute positioning to position the span relative to the div */
+    top: -10px; /* Move the span upwards (adjust this as needed) */
+    right: -10px; /* Move the span to the right (adjust this as needed) */
+    color: #fb5320; /* Set the text color of the badge */
+    border-radius: 50%; /* Make the badge circular */
+    padding: 0.75rem 0.9rem; /* Add padding to the badge */
+    font-size: 0.9rem; /* Adjust the font size of the count */
+    display: inline-block; /* Ensure the span is displayed properly */
+    vertical-align: middle;
+}
+
+
+#menu-btn {
+    display: none;
+}
+
+
+@keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-5rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+} 
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 60%; 
+    height: 60%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: #fff; 
+    margin: 10% auto; 
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+    max-width: 400px; 
+    width: 90%; 
+} 
+
+.close-btn {
+    color: #888; /* Gray color for close button */
+    float: right;
+    font-size: 24px; /* Slightly smaller font size */
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #eb8d22; /* Change color on hover for better visibility */
+    text-decoration: none;
+}
+
+#search-input {
+    width: 100%; /* Full width for input */
+    padding: 10px; /* Padding for input */
+    border: 1px solid #f6c762; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Spacing above the input */
+    color: #000; /* Black text color for better readability */
+    background-color: #fff; /* Ensure a light background */
+}
+
+
+.btn1 {
+    margin: 1rem auto; /* Center the button horizontally */
+    display: block; /* Set the button to block for centering */
+    padding: .5rem 2rem; /* Smaller padding for a compact button */
+    background-color: black; /* Button background color */
+    color: #f9af10; /* Text color */
+    font-size: 1.2rem; /* Reduced font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 4px; /* Slightly rounded corners */
+    text-align: center; /* Center the text inside the button */
+}
+
+.btn1:hover {
+    background: #ec8e22;
+    color: black;
+}
+
+#search-results {
+    margin-top: 20px; 
+    max-height: 150px; 
+    overflow-y: auto; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #fff; 
+    display: none; 
+}
+
+#search-results div {
+    padding: 10px; 
+    border-bottom: 1px solid #eee; 
+}
+
+
+/* 
+/* Modal Styles  Logoin*/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+
+.modal-content {
+    background-color: #fff; 
+    margin: 15% auto; 
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+    max-width: 400px; 
+    width: 90%; 
+} 
+
+.close {
+    color: #888; 
+    float: right;
+    font-size: 27px; 
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #eb8d22; /* Change color on hover for better visibility */
+    text-decoration: none;
+    cursor: pointer;
+} 
+/* General Form Styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    background-color: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    font-size: 2rem;
+    color: #eb8d22;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+/* Input Styles */
+input {
+    color: inherit;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #e0b380;
+    padding-left: 2rem; /* Space for the icons */
+    font-size: 15px;
+}
+
+.input-group {
+    padding: 1% 0;
+    position: relative;
+    margin-bottom: 20px; /* Adds space between input fields */
+}
+
+.input-group i {
+    position: absolute;
+    color: #c28f56;
+    font-size: 1.5rem;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: -7px;
+}
+
+input::placeholder {
+    color: transparent;
+}
+
+/* Label Styles */
+label {
+    color: #b6612c;
+    position: absolute;
+    left: 2rem;
+    top: -1rem; /* Adjusted the position */
+    font-size: 13px;
+    cursor: auto;
+    transition: 0.3s ease all;
+    margin-right: 20px; 
+}
+
+
+input:focus ~ label,
+input:not(:placeholder-shown) ~ label {
+    top: -1.9rem;  /* Move the label upwards when focused */
+    color: #c17a28;
+    font-size: 12px; /* Slightly smaller font on focus */
+}
+
+/* Password hint position */
+.password-hint {
+    display: block;
+    font-size: 0.9em;
+    color: #888;
+    margin-top: 4px;  /* Move the password hint a little lower */
+}
+
+/* Select Input Styling */
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    font-size: 15px;
+    background-color: transparent;
+    border: 1px solid #cb802b;
+    color: #cb802b;
+}
+
+select:focus {
+    border-color: #cb802b;
+}
+
+  
+.recover{
+    text-align:right;
+    font-size:1.5rem;
+    margin-bottom:1rem;
+
+}
+.recover a{
+    text-decoration:none;
+    color:#c28f56;
+}
+.recover a:hover{
+    color:#cb802b;
+    text-decoration:underline;
+}
+.btn1 {
+    margin: 1rem auto; /* Center horizontally */
+    display: block; /* Make the button a block element */
+    padding: 0.9rem 0.8rem; /* Adjusted padding */
+    width: 120px; /* Explicitly set the width */
+    background: #000;
+    color: #f9af10;
+    font-size: 1.2rem; /* Adjusted font size */
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center; /* Ensures text stays centered */
+}
+
+.btn1:hover {
+    background: #6c3b02;
+}
+
+
+.or{
+    font-size:1.5rem;
+    margin-top:0.5rem;
+    text-align:center;
+}
+
+.icons{
+    text-align:center;
+}
+.icons i{
+    color:#c28f56;
+    padding:0.8rem 1.5rem;
+    border-radius:10px;
+    font-size:1.5rem;
+    cursor:pointer;
+    border:2px solid #c28f56;
+    margin:0 15px;
+    transition:1s;
+}
+.icons i:hover{
+    background:#cb802b;
+    font-size:1.6rem;
+    border:2px solid #c8975f;
+}
+.links{
+    display:flex;
+    justify-content:space-around;
+    padding:0 4rem;
+    margin-top:0.9rem;
+    font-weight:italllic;
+    font-size: 1.2rem;
+}
+button{
+    color:#df9643;
+    border:none;
+    background-color:transparent;
+    font-size:1rem;
+    font-weight:bold;
+    font-size: 1.5rem;
+}
+button:hover{
+    text-decoration:underline;
+    color:#8c500c;
+}
+
+/* Modal Styles for liked products */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Darker black w/ opacity */
+}
+
+.modal .modal-content {
+    background-color: #000; /* Modal background color */
+    margin: 10% auto; /* 10% from the top and centered */
+    padding: 35px;
+    border: 1.3px solid rgba(219, 157, 25, 0.942); /* Light yellow border */
+    box-shadow: 0 0 4px rgba(167, 121, 22, 0.932);
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    width: 60%; /* Could be more or less, depending on screen size */
+    transition: transform 0.3s ease; /* Smooth transform */
+}
+
+.modal .modal-content:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+/* Heading style for liked products */
+h2 {
+    text-align: left; /* Center the text */
+    font-size: 17px; /* Font size */
+    color: #e07c09; /* Text color */
+    margin: 20px 0; /* Space above and below */
+    font-family: 'Arial', sans-serif; /* Font family */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Container for liked products */
+#liked-products-list {
+    margin: 3px 0 ; /* Top and bottom margin, left margin for spacing */
+    padding: 15px;
+    border: 1px solid #b3b0b0; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #b6680e; /* Light background color */
+    max-width: 300px; /* Maximum width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    float: left; /* Float to the left */
+}
+
+/* Input field styling */
+#remove-product-index {
+    width: 70%; /* Take up most of the width */
+    padding: 10px; /* Padding for better usability */
+    margin-top: 15px; /* Space above */
+    margin-bottom: 15px; /* Added space below the input field */
+    margin-left: 1px; /* Optional: space on the left for alignment */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 11px; /* Increased font size for better readability */
+}
+
+/* Button styling */
+#remove-product-btn {
+    padding: 5px 10px; /* Padding for the button */
+    font-size: 10.5px; /* Increased font size for consistency */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #191717; /* Button color */
+    color: #eb8d22; /* Text color */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    display: block; /* Make button a block element */
+    margin: 0 auto; /* Center the button */
+    width: 40%; /* Set width for better alignment */
+    float: right;
+}
+
+
+/* Button hover effect */
+#remove-product-btn:hover {
+    background-color: #a55d0a; /* Darker shade on hover */
+}
+
+
+.modal .modal-content .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 24px; /* Slightly larger size */
+    font-weight: bold;
+    border-radius: 50%; /* Round close button */
+    background-color: transparent; /* Transparent background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor */
+
+}
+
+.modal .modal-content .close-btn:hover {
+    color: #f9af10;
+}
+
+.home {
+    padding-top: 14rem;
+    background: url(images/back1.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.home .slides-container .slide {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    display: none;
+}
+
+.home .slides-container .slide.active {
+    display: flex;
+}
+
+.home .slides-container .slide .content {
+    flex: 1 1 40rem;
+    animation: fadeLeft .4s linear .4s backwards;
+}
+
+.home .slides-container .slide .content span {
+    color: #edcba3;
+    font-size: 2.5rem;
+}
+
+.home .slides-container .slide .content h3 {
+    font-size: 5.5rem;
+    color: #eb8d22;
+    padding: 0.5rem 0;
+}
+
+.home .slides-container .slide .img {
+    flex: 1 1 40rem;
+    margin: 3rem 0;
+}
+
+.home .slides-container .slide .img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    animation: fadeUp .4s linear;
+}
+
+.home #next-slide,
+.home #prev-slide {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background: #000;
+    font-size: 2rem;
+    color: #f9af10;
+    cursor: pointer;
+}
+
+.home #next-slide:hover,
+.home #prev-slide:hover {
+    background: #6c3b02;
+    color: #000;
+}
+
+.home #prev-slide {
+    left: 2rem;
+}
+
+.home #next-slide {
+    right: 2rem;
+}
+.banner-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+    border-color: #f9af10;
+}
+
+
+.banner-container .banner {
+    position: relative;
+    height: 25rem;
+    overflow: hidden;
+    border: 1.3px solid rgba(249, 175, 16, 0.942); /* Light yellow border */
+    box-shadow: 0 0 3px rgba(187, 141, 40, 0.932); /* Soft yellow glow effect */
+    border-radius: 8px; /* Rounded edges */
+}
+
+.banner-container .banner img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.banner-container .banner .content {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align content to the start */
+    gap: 0.5rem; /* Space between elements */
+}
+
+.banner-container .banner .content span {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.banner-container .banner .content h3 {
+    font-size: 2rem;
+    color: #eb8d22;
+    margin: 0; /* Remove default margin */
+}
+
+.banner-container .banner .content .btn {
+    padding: 0.6rem 2rem;
+    margin-top: 1rem; /* Add some space between h3 and button */
+}
+
+.banner-container .banner:hover img {
+    transform: scale(1.2);
+}
+
+.category .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); /* Correct syntax for responsive grid */
+    gap: 1.5rem;
+    padding: 3rem 0;
+    /* justify-items: center; Ensures boxes are centered horizontally */
+}
+.category .box-container .box {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    text-align: center; /* Center text */
+    border: 1px solid rgba(155, 112, 20, 0.942); /* Light yellow border */
+    box-shadow: 0 0 2.7px rgba(187, 141, 40, 0.932); /* Shadow for depth */
+    padding: 0.5rem; /* Space inside the box */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    overflow: hidden; /* Hide overflow */
+    margin: 1rem; /* Add some space between boxes */
+    border-radius: 7px; /* Rounded corners for the box */
+}
+
+.category .box-container .box img {
+    height: 13.5rem; /* Fixed height */
+    width: 100%; /* Make the width 100% to fill the box */
+    max-width: 18rem; /* Max width to prevent stretching */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 3px; /* Rounded corners for the image */
+}
+
+
+
+.category .box-container .box h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: #6c3b02;
+}
+
+.category .box-container .box:hover h3 {
+    color: #f9af10;
+}
+
+
+
+.about {
+    display: flex; /* Use flexbox to align items in a row */
+    align-items: center; /* Vertically center the items */
+    gap: 2rem; /* Increase space between the image and content */
+}
+
+/* Styling for the image container */
+.about .img {
+    flex: 0 0 45rem; /* Set a smaller fixed width for the image container */
+    border: 1.5px solid rgba(121, 85, 7, 0.942); /* Light yellow border */
+    box-shadow: 0 0 2px rgba(187, 141, 40, 0.932); /* Shadow for depth */
+    border-radius: 10px; /* Slightly round the corners */
+    overflow: hidden; /* Ensure content inside respects the rounded corners */
+}
+
+
+/* Styling for the image itself */
+.about .img img {
+    width: 100%; /* Ensure the image fills the container */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 6px; /* Slightly round the corners */
+}
+
+/* Styling for the content container */
+.about .content {
+    flex: 1; /* Allow the content container to take up remaining space */
+}
+
+/* Styling for span elements within content */
+.about .content span {
+    color: #fff; /* Set text color */
+    font-size: 2.5rem; /* Font size */
+    display: block; /* Ensure it takes full width */
+    margin-bottom: 1rem; /* Add space below */
+}
+
+/* Styling for heading */
+.about .content h3 {
+    color: #eb8d22; /* Set heading color */
+    font-size: 3rem; /* Font size */
+    margin: 1rem 0; /* Space above and below heading */
+}
+
+/* Styling for paragraphs */
+.about .content p {
+    color: #f7cd9e; /* Set paragraph color */
+    font-size: 1.4rem; /* Font size */
+    line-height: 1.6; /* Improved line height for readability */
+    padding: 1rem 0; /* Space above and below paragraphs */
+}
+
+.about .content .btn{
+    margin: 0.6rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    background: #121111;
+    color: #f9af10;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.about .content .btn:hover{
+    background: #6c3b02;
+}
+
+.gallery .box-container{
+    display: grid;
+    grid-template-columns:  repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+.gallery .box-container .box{
+    height: 25rem;
+    overflow: hidden;
+    position: relative;
+    border: 1.5px solid rgba(179, 125, 10, 0.942); /* Light yellow border */
+    box-shadow: 0 0 2px rgba(187, 141, 40, 0.932); /* Shadow for depth */
+}
+.gallery .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 0.5rem 1rem  rgb(0,0,0,0.7);
+}
+.gallery .box-container .box:hover img{
+    transform: scale(1.2);
+}
+.gallery .box-container .box:hover .icons{
+    bottom: 0;
+}
+
+.gallery .box-container .box .icons{
+    text-align: center;
+    background: rgb(0,0,0,0.7);
+    padding: 1.5rem 0;
+    position: absolute;
+    bottom: -6rem;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+.gallery .box-container .box .icons a{
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0 1.5rem;
+
+}
+.gallery .box-container .box .icons a:hover{
+    color: #f9af10;
+}
+
+.info-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr)); /* Corrected 1 fr to 1fr */
+    gap: 1.5rem;
+    align-items: start; /* Ensures the items align at the top */
+    
+}
+
+.info-container .info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.7);
+    background: #121111;
+    transition:  0.3s ease, color 0.3s ease; /* Smooth transition on hover */
+    border-radius: 5px;
+    border: 1.5px solid rgba(179, 125, 10, 0.942); /* Light yellow border */
+    box-shadow: 0 0 2px rgba(187, 141, 40, 0.932); /* Shadow for depth */
+}
+
+.info-container .info:hover {
+    background: #b76507;
+    color: #fff;
+}
+
+.info-container .info img {
+    height: 7rem;
+}
+
+.info-container .info .content h3 {
+    font-size: 2rem;
+    color: #f9af10;
+    padding-bottom: 0.5rem;
+}
+
+.info-container .info .content span {
+    font-size: 1.5rem;
+    color: #f6c967;
+}
+
+.review{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+.review .box{
+     padding: 2rem;
+     border: 0.1rem solid rgba(0, 0, 0, 0.7);
+     background: #1a1616;
+     border: 1.3px solid rgba(179, 125, 10, 0.942); /* Light yellow border */
+    box-shadow: 0 0 1.5px rgba(187, 141, 40, 0.932); /* Shadow for depth */
+    border-radius: 6px;
+}
+.review .box .user{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.review .box .user img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+}
+
+.review .box .user h3{
+    font-size: 2.2rem;
+    color: #eb8d22;
+}
+.review .box .user span{
+    font-size: 1.4rem;
+    color: #fff;
+}
+.review .box  p{
+    font-size: 1.4rem;
+    color: #fad6ad;
+    line-height: 2;
+}
+/* Container for blog boxes */
+.blogs .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* Reduced min width for smaller screens */
+    gap: 1.2rem; /* Slightly reduced gap between boxes */
+}
+
+/* Individual blog boxes */
+.blogs .box-container .box {
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    background: #1a1616;
+    border: 1px solid rgba(179, 125, 10, 0.8); /* Light yellow border */
+    box-shadow: 0 0 5px rgba(187, 141, 40, 0.5); /* Softer shadow for better depth */
+    border-radius: 8px; /* Slightly more rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Image hover zoom effect */
+.blogs .box-container .box:hover img {
+    transform: scale(1.1); /* Reduced hover zoom for subtle effect */
+}
+
+/* Image container for each box */
+.blogs .box-container .box .img {
+    height: 18rem; /* Reduced height for better proportional images */
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Slight border at the bottom of the image */
+}
+
+/* Image scaling inside the container */
+.blogs .box-container .box .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the box area fully */
+    transition: transform 0.3s ease; /* Smooth transition for image scaling */
+}
+
+/* Content inside each blog box */
+.blogs .box-container .box .content {
+    padding: 1.5rem; /* Reduced padding for a compact layout */
+    text-align: left; /* Left-align text for better readability */
+}
+
+/* Icons section inside blog box */
+.blogs .box-container .box .content .icons {
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Icons styling */
+.blogs .box-container .box .content .icons a {
+    font-size: 1.2rem;
+    color: #edcba3;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for icons */
+.blogs .box-container .box .content .icons a:hover {
+    color: #6f4c02;
+}
+
+/* Icons inside links */
+.blogs .box-container .box .content .icons a i {
+    color: #b76507;
+    padding-right: 0.5rem;
+}
+
+/* Blog heading inside content */
+.blogs .box-container .box .content h3 {
+    font-size: 2rem; /* Slightly reduced font size for better fit */
+    color: #b76507;
+    margin-bottom: 1rem;
+}
+
+/* Blog description inside content */
+.blogs .box-container .box .content p {
+    font-size: 1.3rem;
+    color: #edcba3;
+    line-height: 1.6; /* Adjust line height for better readability */
+    padding: 0.8rem 0;
+}
+
+/* Hover effect for entire box */
+.blogs .box-container .box:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Container for contact icon boxes */
+.contact .icon-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* Reduced min width for smaller boxes */
+    gap: 1.2rem; /* Slightly reduced space between boxes */
+}
+
+/* Individual icon boxes */
+.contact .icon-container .icons {
+    text-align: center;
+    padding: 1.5rem; /* Reduced padding for a more compact look */
+    background: #1a1616;
+    border: 1px solid rgba(179, 125, 10, 0.8); /* Light yellow border */
+    box-shadow: 0 0 4px rgba(187, 141, 40, 0.5); /* Slightly smaller shadow */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for icon boxes */
+.contact .icon-container .icons:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 0 10px rgba(187, 141, 40, 0.8); 
+}
+
+/* Icon styling */
+.contact .icon-container .icons i {
+    height: 5rem; /* Reduced icon size */
+    width: 5rem; /* Matching width */
+    line-height: 5rem;
+    font-size: 2rem; /* Smaller font size for icons */
+    background: #000;
+    color: #eb8d22;
+    border-radius: 50%;
+    transition: transform 0.3s ease; /* Smooth transition for icon hover effect */
+}
+
+
+/* Heading inside icon box */
+.contact .icon-container .icons h3 {
+    color: #b76507;
+    font-size: 1.8rem; /* Slightly smaller heading */
+    padding: 0.8rem 0; /* Reduced padding */
+}
+
+
+/* Description text inside icon box */
+.contact .icon-container .icons p {
+    color: #edcba3;
+    font-size: 1.4rem; /* Reduced font size */
+    line-height: 1.8; /* Slightly reduced line height for better compactness */
+}
+
+.contact .icon-container .icons p:hover{
+    transform: scale(1.1); /* Slightly enlarge the icon */
+}
+
+
+/* Footer styling */
+.footer {
+    background: #000;
+    padding: 2rem 1rem; /* Reduced overall padding for a smaller footer */
+}
+
+/* Footer box container layout */
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); /* Reduced min width for smaller columns */
+    gap: 1.2rem; /* Slightly reduced space between boxes */
+}
+
+/* Footer box headings */
+.footer .box-container .box h3 {
+    font-size: 1.8rem; /* Reduced heading font size */
+    color: #edcba3;
+    padding: 0.8rem 0; /* Reduced padding around heading */
+}
+
+/* Footer box paragraphs */
+.footer .box-container .box p {
+    font-size: 1.4rem; /* Slightly smaller font size */
+    color: #eb8d22;
+    padding-bottom: 0.4rem; /* Reduced padding */
+}
+
+/* Footer links */
+.footer .box-container .box a {
+    font-size: 1.4rem; /* Reduced font size for links */
+    color: #b76507;
+    padding: 0.8rem 0; /* Reduced padding for more compact links */
+    display: block;
+}
+
+/* Footer link hover effect */
+.footer .box-container .box a:hover {
+    color: #fff;
+}
+
+/* Icon adjustment on hover */
+.footer .box-container .box a:hover i {
+    padding-right: 1.5rem; /* Slightly smaller padding for icons on hover */
+}
+
+/* Footer link icons */
+.footer .box-container .box a i {
+    padding-right: 0.4rem; /* Reduced padding for icons */
+    color: #edcba3;
+}
+
+/* Email input field */
+.footer .box-container .box form input[type="email"] {
+    width: 100%;
+    padding: 0.8rem 1rem; /* Reduced padding for a more compact field */
+    font-size: 1.4rem; /* Slightly smaller font size */
+    color: white;
+    margin: 0.8rem 0; /* Reduced margin for better spacing */
+    text-transform: none;
+}
+
+/* Button styling */
+.footer .box-container .box .btn {
+    margin: 0.8rem;
+    padding: 0.6rem 2.5rem; /* Reduced button size */
+    background: #121111;
+    color: #f9af10;
+    font-size: 1.4rem; /* Slightly smaller button font */
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Button hover effect */
+.footer .box-container .box .btn:hover {
+    background: #6c3b02;
+}
+
+/* Payment section image or icon */
+.footer .box-container .box .payment {
+    width: 115%;
+    margin-top: 1.5rem; /* Reduced top margin */
+    margin-left: -15px; /* Adjust this value to move it slightly to the left */
+}
+
+
+/* Footer credit styling */
+.credit {
+    text-align: center;
+    background: #121111;
+    color: #eb8d22;
+    font-size: 1.8rem; /* Reduced font size for credits */
+    padding: 1.2rem 0; /* Added padding to balance the footer */
+}
+
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+
+    .home #next-slide,
+    .home #prev-slide {
+        transform: translateY(0);
+        top: 88%;
+    }
+
+    .home #prev-slide {
+        left: auto;
+        right: 8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background: #222;
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+        border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .navbar a {
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: var(--brown);
+        font-size: 2rem;
+        display: block;
+        border-radius: 5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .home .slides-container .slide .content h3 {
+        font-size: 4rem;
+    }
+    .contact .row form .inputBox input{
+        width: 100%;
+    }
+    .products .box-container .box .img{
+        width: 100%;
+    }
+    .category .box-container .box img{
+        width: 100%;
+    }
+} 

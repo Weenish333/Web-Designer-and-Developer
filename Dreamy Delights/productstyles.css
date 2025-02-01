@@ -1,0 +1,805 @@
+@import url('http://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+/* General Styles */
+:root {
+    --brown: #fdf9f9;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    text-decoration: none;
+    transition: .2s linear;
+}
+body{
+    background: #000;
+    color: #fff;
+}
+section {
+    padding: 3rem 9%;
+}
+
+h3.heading {
+    top: -20px; /* Moves the heading up by 20px (adjust as needed) */
+    text-align: center;
+    font-size: 2rem;
+    color: #4f3703;
+    position: relative; /* Ensure the `top` property works */
+    padding-top: 6px;
+}
+
+.container {
+    max-width: 750px; /* Set a reasonable max-width */
+    margin: 50px auto; /* Center the container */
+    padding: 10px; /* Add internal spacing */
+    background-color: rgba(16, 15, 15, 0.6); /* Semi-transparent background color to dim it */
+    background-image: url('images/gal41.jpg'); /* Background image */
+    background-size: cover; /* Make the image cover the entire container */
+    background-position: center; /* Center the background image */
+    text-align: center; /* Center text */
+    border-radius: 10px; /* Rounded corners */
+    position: relative; /* Allows absolute positioning for elements inside */
+    min-height: 3px; /* Set a minimum height as a fallback */
+    height: auto; /* Allow height to adjust automatically */
+    overflow: visible; /* Ensure content overflow does not hide elements */
+}
+
+
+.display_message {
+    position: absolute; /* Position it absolutely within the container */
+    top: -25px; /* Align it to the top of the container */
+    left: 0; /* Align it to the left of the container */
+    right: 0; /* Ensures it fills the container horizontally */
+    background-color: #f8d54b; /* Light yellow background for the message */
+    color: #333; /* Dark text color for contrast */
+    padding: 24px; /* Some padding to space out the content */
+    border-radius: 5px; /* Rounded corners for the message box */
+    font-size: 16px; /* Set font size */
+    display: block; /* Ensures the message is a block-level element */
+    box-sizing: border-box; /* Ensures padding and border are included in the width calculation */
+    margin-top: 0px;
+}
+
+.display_message span {
+    display: block; /* Ensures the text inside the span takes up the full width */
+}
+
+.display_message i {
+    position: absolute; /* Positioned icon inside the message box */
+    top: 10px;
+    right: 10px; /* Positioned in the top-right corner */
+    cursor: pointer; /* Indicates that the icon is clickable */
+    font-size: 18px; /* Icon size */
+    color: #6c3b02; /* Icon color */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.display_message i:hover {
+    color: #a85c05; /* Color change on hover (red) */
+}
+.container {
+    max-width: 750px; /* Set a reasonable max-width */
+    margin: 50px auto; /* Center the container */
+    padding: 10px; /* Add internal spacing */
+    background-color: rgba(16, 15, 15, 0.6); /* Semi-transparent background color to dim it */
+    background-image: url('images/gal41.jpg'); /* Background image */
+    background-size: cover; /* Make the image cover the entire container */
+    background-position: center; /* Center the background image */
+    text-align: center; /* Center text */
+    border-radius: 10px; /* Rounded corners */
+    position: relative; /* Allows absolute positioning for elements inside */
+    min-height: 3px; /* Set a minimum height as a fallback */
+    height: auto; /* Allow height to adjust automatically */
+    overflow: visible; /* Ensure content overflow does not hide elements */
+}
+
+h3.heading1 {
+    top: 10px; /* Moves the heading up by 20px (adjust as needed) */
+    text-align: center;
+    font-size: 2rem;
+    color: #4f3703;
+    position: relative; /* Ensure the `top` property works */
+    padding-top: 10px;
+}
+
+.display_message1 {
+    position: absolute; /* Position it absolutely within the container */
+    top: 20px; /* Adjusted to move it slightly below the top of the container */
+    left: 0; /* Align it to the left of the container */
+    right: 0; /* Ensures it fills the container horizontally */
+    background-color: #f8d54b; /* Light yellow background for the message */
+    color: #333; /* Dark text color for contrast */
+    padding: 24px; /* Some padding to space out the content */
+    border-radius: 5px; /* Rounded corners for the message box */
+    font-size: 16px; /* Set font size */
+    display: block; /* Ensures the message is a block-level element */
+    box-sizing: border-box; /* Ensures padding and border are included in the width calculation */
+    margin-top: 40px;
+}
+
+
+.display_message1 span {
+    display: block; /* Ensures the text inside the span takes up the full width */
+}
+
+.display_message1 i {
+    position: absolute; /* Positioned icon inside the message box */
+    top: 10px;
+    right: 10px; /* Positioned in the top-right corner */
+    cursor: pointer; /* Indicates that the icon is clickable */
+    font-size: 18px; /* Icon size */
+    color: #6c3b02; /* Icon color */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.display_message1 i:hover {
+    color: #a85c05; /* Color change on hover (red) */
+}
+
+/* Form Section */
+.add_product {
+    background: rgb(21, 20, 20);
+    padding: 20px;
+    border-radius: 1rem;
+    border: 1.2px solid rgba(219, 157, 25, 0.942); /* Light yellow border */
+    box-shadow: 0 0 3px rgba(167, 121, 22, 0.932);
+    max-width: 450px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.input_fields {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input_fields:focus {
+    border-color: #ecab1f;
+}
+
+.submit-btn {
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #af7906;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 130px; /* Adjusted width for a smaller box */
+    display: block; /* Ensures button behaves like a block-level element */
+    margin: 0 auto; /* Centers the button horizontally */
+}
+.submit-btn:hover {
+    background-color: #6c3b02;
+}
+
+/* productheader.php */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--brown);
+    display: flex;
+    align-items: center; /* Ensures the text and image are aligned vertically */
+    justify-content: space-between;
+    padding: 0.4rem 3%; /* Reduced padding for a more compact look */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+    font-size: 2rem; /* Reduced logo font size */
+    font-weight: bolder;
+    color: #faad06;
+    display: flex; /* Flexbox to align image and text horizontally */
+    align-items: center; /* Ensures image and text align vertically */
+    
+}
+
+.header .logo i {
+    font-size: 2rem; /* Adjust the size of the basket icon */
+    color: #1a1616;
+    margin-right: 0.1rem; /* Reduced space between the basket and the image */
+    vertical-align: middle; /* Aligns the basket vertically with the text */
+}
+
+.header .logo img {
+    width: 5rem; /* Adjust the image size slightly */
+    height: auto; /* Keeps aspect ratio */
+    margin-right: 0.5rem; /* Space between image and text */
+}
+
+
+.navbar a {
+    font-size: 1rem; /* Reduced font size for the navbar links */
+    color: #572f01;
+    margin: 0 0.13rem; /* Reduced margin for better spacing */
+}
+
+.navbar a:hover {
+    color: #f9af10;
+}
+
+.navbar a .logout-link {
+    color: #f9af10; /* Change to your desired color */
+    text-decoration: none; /* Optional: Removes the underline */
+}
+.navbar a .logout-link:hover{
+    color: #cb802b;
+}
+.cart {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #6c3b02;
+    font-size: 1.5rem;
+    position: relative; /* Added for span positioning */
+}
+.cart:hover {
+    color: #f9af10;
+}
+
+.cart span {
+    position: absolute; /* Position relative to the cart */
+    top: -7px; /* Moves the span above the cart icon */
+    right: -7px; /* Adjusts horizontal position */
+    background: #d72d17;
+    color: #fcf9f9;
+    padding: 1px 2px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cart.php*/
+.container1 {
+    max-width: 750px; /* Set a reasonable max-width */
+    margin: 50px auto; /* Center the container */
+    padding: 30px; /* Add internal spacing */
+    background-color: #1c1c1c; /* Slightly lighter background */
+    background-image: url('images/gal2.png');
+    text-align: center; /* Center text */
+    border-radius: 10px; /* Rounded corners */
+    position: relative; /* Allows absolute positioning for elements inside */
+    min-height: 300px; /* Set a minimum height as a fallback */
+    height: auto; /* Allow height to adjust automatically */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Add subtle shadow */
+    color: white; /* Default text color */
+}
+
+/* Section Heading Styling */
+.heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #f9af10;
+    text-transform: uppercase;
+}
+
+
+/* Table Styling */
+.display_product table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse;
+    margin-top: 10px; /* Space between heading and table */
+    background-color: #222; /* Dark background for table */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure proper rounding */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    color: white; /* Table text color */
+    margin-left: -50px;
+}
+
+/* Table Header Styling */
+.display_product th {
+    background-color: #333;
+    color: #c38603;
+    padding: 15px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid #a17c2e;
+}
+
+/* Table Data Styling */
+.display_product td {
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #444;
+}
+
+/* Image Styling in Table */
+.product-img {
+    width: 80px; /* Adjusted width */
+    height: 80px; /* Adjusted height */
+    object-fit: cover; /* Ensures the image fits well */
+    border-radius: 5px; /* Slightly rounded corners */
+    background-color: transparent;
+    margin: 0 auto;
+}
+
+/* Quantity Styling */
+.quantity input[type="number"] {
+    width: 60px; /* Width of input box */
+    padding: 2.5px;
+    margin-left: -5px;
+    text-align: center;
+    border: 1px solid #cb9115;
+    border-radius: 2px;
+    background-color: white;
+    color: black;
+    margin-bottom: 3px;
+}
+
+.quantity input[type="submit"] {
+    padding: 2.5px 3px;
+    background-color: black;
+    color: #e89e0f;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.quantity input[type="submit"]:hover {
+    background-color: #6c3b02;
+    transform: scale(1.05);
+}
+
+/* Action Buttons in Table */
+.display_product td a {
+    color: #965204;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.display_product td a:hover {
+    color: #f9af10;
+    transform: scale(1.1);
+}
+
+/* Hover Effect for Rows */
+.display_product tr:hover {
+    background-color: #201f1f;
+    transition: background-color 0.3s ease;
+}
+
+/* Bottom Area Styling */
+.table-bottom {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust gap between elements */
+}
+
+.table-bottom {
+    display: flex;
+    justify-content: space-between; /* Space between the buttons */
+    align-items: center; /* Align buttons vertically center */
+    margin-top: 20px;
+}
+
+/* Button Styling */
+.table-bottom .bottom-btn1,
+.table-bottom .bottom-btn2,
+.table-bottom .bottom-btn3 {
+    padding: 10px 20px;
+    background-color: black;
+    color: #a67407;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Left Button - Aligns to the left */
+.table-bottom .bottom-btn1 {
+    margin-right: auto; /* Pushes this button to the far left */
+}
+
+/* Right Button - Aligns to the right */
+.table-bottom .bottom-btn2 {
+    margin-left: auto; /* Pushes this button to the far right */
+}
+
+/* Center Button - Aligns in the center */
+.table-bottom .bottom-btn3 {
+    margin: 0 auto; /* Centers the button */
+}
+
+/* Hover Effect for All Buttons */
+.table-bottom .bottom-btn1:hover,
+.table-bottom .bottom-btn3:hover {
+    background-color: #935003;
+    transform: scale(1.05); /* Slightly enlarges the button */
+}
+
+/* Delete All Button */
+.delete_all_btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background-color: #a67407;
+    color: black;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.delete_all_btn:hover {
+    background-color: #935003;
+    transform: scale(1.05);
+}
+
+.delete_all_btn i {
+    margin-right: 5px; /* Add spacing between icon and text */
+}
+
+.empty_text {
+    text-align: center; /* Center-align the text */
+    color: #f9af10; /* Yellow color for visibility */
+    font-size: 1.2rem; /* Slightly larger text */
+    font-weight: bold; /* Make the text bold */
+    padding: 20px 0; /* Add spacing above and below the text */
+    background-color: #333; /* Dark background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    margin: 5px 0; /* Add spacing around the div */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 120%; /* Ensure it takes up full width */
+    margin-left: -50px; /* Shift the element slightly to the left */
+}
+
+
+
+/* update.php */
+/* Form Section */
+.update_product {
+    background: rgb(21, 20, 20);
+    padding: 20px;
+    border-radius: 1rem;
+    border: 1.2px solid rgba(219, 157, 25, 0.942); /* Light yellow border */
+    box-shadow: 0 0 3px rgba(167, 121, 22, 0.932);
+    max-width: 450px;
+    margin: 40px auto; /* Increased top and bottom margin to push it lower */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px; /* Increased margin-top to push it further down */
+}
+
+
+.input_fields {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input_fields:focus {
+    border-color: #ecab1f;
+}
+
+/* Add Flexbox to container of buttons */
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Space the buttons out on opposite sides */
+    gap: 5px; /* Reduced the gap between the buttons */
+}
+
+/* Update for Edit Button */
+.edit-btn {
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: #af7906;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 200px; /* Reduced width for a more compact look */
+    display: inline-block;
+}
+
+.edit-btn:hover {
+    background-color: #6c3b02;
+}
+
+/* Update for Cancel Button */
+.cancel-btn {
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: #af7906;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 200px; /* Reduced width for a more compact look */
+    display: inline-block;
+}
+
+.cancel-btn:hover {
+    background-color: #6c3b02;
+}
+
+
+/* products.php */
+.products .title {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
+    border-bottom: 0.1rem solid #f9af10; /* Changed border to yellow */
+    color: #fff;
+    background-color: #000; /* Background set to black */
+    margin-top: 45px;
+    
+}
+
+.products.title span{
+    color:#f9af10;
+    padding-left: .7rem;
+
+}
+
+
+
+.products .container {
+    max-width: 900px; /* Decreased the width */
+    margin: 40px auto; /* Adjusted margin to center it with some space at the top */
+    padding: 10px; /* Increased padding for more space inside */
+    background-color: none; /* Changed the background color */
+    text-align: center; /* Ensures the content is centered */
+    border-radius: 10px; /* Optional: adds rounded corners */
+    position: relative; /* To allow absolute positioning of the close icon */
+    height: 19px; /* Allows the container to grow based on content */
+}
+
+
+/* Message box */
+.products .container.display_message {
+    position: relative; /* Position it absolutely within the container */
+    top: 10;
+    left: 0;
+    right: 0;
+    background-color: #bf9a08; /* Light yellow background for the message */
+    color: #6c3b02;
+    padding: 10px 18px; /* Adjusted padding for better spacing */
+    border-radius: 5px;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 15px; /* Adds some space below the message */
+    box-sizing: border-box;
+}
+
+/* Styling the close icon inside the message */
+.products  .container.display_message i {
+    position: absolute; /* Positioned icon inside the message box */
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #6c3b02;
+    transition: color 0.3s ease;
+}
+
+.products .container.display_message i:hover {
+    color: #a85c05; /* Icon color on hover */
+}
+
+/* Container for product boxes */
+.products .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 0; /* Padding removed to fit the container properly */
+}
+
+/* Each individual product container */
+.products .box-container form {
+    flex: 1 1 calc(25% - 1rem); /* Flex properties to adjust to 4 products per row */
+    max-width: calc(25% - 1rem);
+    margin: 0;
+    box-sizing: border-box;
+    min-width: 230px; /* Set a minimum width */
+    height: 300px; /* Set a fixed height to make boxes uniform */
+    margin-bottom: 15px;
+}
+
+/* Styling for individual product boxes */
+.edit_form {
+    background: #fff;
+    text-align: center;
+    padding: 1rem;
+    border: 2px solid rgba(238, 172, 30, 0.942);
+    box-shadow: 0 0 3px rgba(187, 141, 40, 0.932);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+    height: 100%; /* Ensures the form takes full height of the box */
+}
+
+/* Hover effect */
+.edit_form:hover {
+    transform: translateY(-5px);
+}
+
+/* Image styling */
+.edit_form img {
+    width: 100%;
+    height: 130px; /* Fixed height for images */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+}
+
+/* Product title styling */
+.edit_form h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: black;
+    margin-bottom: 7px;
+}
+
+/* Price styling */
+.edit_form .price {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #ab5d04;
+    margin-bottom: 5px;
+}
+
+/* Button styling */
+.edit_form .submit-btn1 {
+    padding: 9px 20px;
+    font-size: 1.4rem;
+    background-color: black;
+    color: #f9af10;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 70%;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+/* Button hover effect */
+.edit_form .submit-btn1:hover {
+    background-color: #6c3b02;
+    transform: scale(1.05);
+}
+
+
+.edit_form  i .wishlist-icon {
+    font-size: 20px;
+    color: #6c3b02;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.edit_form i .wishlist-icon:hover {
+    color: #c0392b;
+    transform: scale(1.2);
+}
+/* Viewproducts.php */
+.container2 {
+    max-width: 750px; /* Set a reasonable max-width */
+    margin: 50px auto; /* Center the container */
+    padding: 10px; /* Add internal spacing */
+    background-color: rgba(16, 15, 15, 0.6); /* Semi-transparent background color to dim it */
+    background-image: url('images/gal41.jpg'); /* Background image */
+    background-size: cover; /* Make the image cover the entire container */
+    background-position: center; /* Center the background image */
+    text-align: center; /* Center text */
+    border-radius: 10px; /* Rounded corners */
+    position: relative; /* Allows absolute positioning for elements inside */
+    min-height: 3px; /* Set a minimum height as a fallback */
+    height: auto; /* Allow height to adjust automatically */
+    overflow: visible; /* Ensure content overflow does not hide elements */
+}
+
+/* Table Styling */
+.display_product1 table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse;
+    margin-top: 10px; /* Space between heading and table */
+    background-color: #222; /* Dark background for table */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure proper rounding */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    color: white; /* Table text color */
+    margin-right: 50px;
+}
+
+/* Table Header Styling */
+.display_product1 th {
+    background-color: #333;
+    color: #c38603;
+    padding: 15px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid #a17c2e;
+}
+
+/* Table Data Styling */
+.display_product1 td {
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #444;
+}
+
+/* Image Styling in Table */
+.display_product1 .product-img {
+    width: 80px; /* Adjusted width */
+    height: 80px; /* Adjusted height */
+    object-fit: cover; /* Ensures the image fits well */
+    border-radius: 5px; /* Slightly rounded corners */
+    background-color: transparent;
+    margin: 0 auto;
+}
+
+/* Action Buttons in Table */
+.display_product1 td a {
+    color: #965204;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.display_product1 td a:hover {
+    color: #f9af10;
+    transform: scale(1.1);
+}
+
+/* Hover Effect for Rows */
+.display_product1 tr:hover {
+    background-color: #201f1f;
+    transition: background-color 0.3s ease;
+}
+
+.empty_text {
+    text-align: center; /* Center-align the text */
+    color: #f9af10; /* Yellow color for visibility */
+    font-size: 1.2rem; /* Slightly larger text */
+    font-weight: bold; /* Make the text bold */
+    padding: 20px 0; /* Add spacing above and below the text */
+    background-color: #333; /* Dark background for contrast */
+    border-radius: 10px; /* Rounded corners */
+    margin: 5px 0; /* Add spacing around the div */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 120%; /* Ensure it takes up full width */
+    margin-left: -50px; /* Shift the element slightly to the left */
+}
